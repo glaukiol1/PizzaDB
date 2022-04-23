@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.spec": "javascript",
+        "db-database.c": "cpp",
+        "db-table.c": "cpp",
+        "db.h": "c",
+        "__locale": "c",
+        "stdio.h": "c",
+        "typeinfo": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
