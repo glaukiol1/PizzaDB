@@ -6,7 +6,8 @@
         "db.h": "c",
         "__locale": "c",
         "stdio.h": "c",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stdbool.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
