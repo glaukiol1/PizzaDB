@@ -10,8 +10,8 @@
 #define MAX_TABLES 100 // the maxiumum number of tables in a database
 
 struct Database {
-    table_t *dbtables[MAX_TABLES];
-    char *name;
+    table_t* dbtables[MAX_TABLES];
+    char* name;
     int current_index; // the current index of the highest init-ed table
 };
 
