@@ -40,12 +40,13 @@ void test2() {
     switch (result->type)
     {
     case HM_VALUE_INT:
-        printf("Value is %d, of type int", *(int*) result->value);
+        printf("Value is %d, of type int\n", *(int*) result->value);
         break;
     case HM_ERROR:
-        printf("Error while getting result of the hashmap entry...");
+        printf("Error while getting result of the hashmap entry...\n");
         exit(1);
     default:
+        // there are more cases...
         break;
     }
 }
