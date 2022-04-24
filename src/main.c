@@ -76,6 +76,22 @@ void test3() {
         // there are more cases...
         break;
     }
+    char* z = (char*) "hello";
+    hashmapSet(x->map, (char*) "test1", z, HM_VALUE_CHAR); // reassigning
+
+    value_t* n = hashmapGet(x->map, (char*) "test1");
+    switch (y->type)
+    {
+    case HM_VALUE_CHAR:
+        printf("Value is \"%s\", of type char*\n", (char*) n->value);
+        break;
+    case HM_ERROR:
+        printf("Error while getting result of the hashmap entry...\n");
+        exit(1);
+    default:
+        // there are more cases...
+        break;
+    }
 }
 
 // int argc, char const *argv[]

@@ -9,7 +9,8 @@
         "typeinfo": "cpp",
         "stdbool.h": "c",
         "__nullptr": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "stddef.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
