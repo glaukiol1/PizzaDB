@@ -10,7 +10,23 @@
         "stdbool.h": "c",
         "__nullptr": "c",
         "type_traits": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "__bit_reference": "c",
+        "__functional_base": "c",
+        "__node_handle": "c",
+        "algorithm": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "__memory": "c",
+        "functional": "c",
+        "iterator": "c",
+        "limits": "c",
+        "optional": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "tuple": "c",
+        "vector": "c",
+        "memory": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -17,7 +17,7 @@ struct Table
 typedef struct Table table_t;
 
 table_t* newTable(char* name, int id) {
-    static table_t table;
+    static table_t table; // this line will over-write any more than 1 table!!! @DESTRUCTIVE @TOFIX @FIXME @TODO
     table = (table_t) {.id = id, .name = name, .entries = {0} };
     return &table;
 }

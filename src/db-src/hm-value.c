@@ -16,6 +16,7 @@
 struct Value {
     void*value;
     int type;
+    int index; // the index of the value (when inside a hashmap)
 };
 
 typedef struct Value value_t;
@@ -27,10 +28,9 @@ typedef struct Value value_t;
  * other way.
 */
 
-value_t* newValue(void* value, int type) {
-    static value_t s;
-    s = (value_t) {.value = value, .type = type};
-    return &s;
+value_t newValue(void* value, int type, int id) {
+    value_t s = {.value = value, .type = type, .index = id};
+    return s;
 }
 
 #endif
