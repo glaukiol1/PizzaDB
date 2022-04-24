@@ -7,7 +7,9 @@
         "__locale": "c",
         "stdio.h": "c",
         "typeinfo": "cpp",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "__nullptr": "c",
+        "type_traits": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

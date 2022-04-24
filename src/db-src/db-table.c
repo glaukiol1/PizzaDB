@@ -35,5 +35,19 @@ void insertEntry(table_t* t, entry_t* e) {
     t->entries[t->current_index] = e;
 }
 
+/**
+ * returns a entry_t* if an entry was found
+ * in the specified table_t* with set `id`,
+ * or a NULL pointer.
+*/
+entry_t* getEntry(table_t* t, int id) {
+    for (int i = 0; i <= t->current_index; i++)
+    {
+        if (t->entries[i]->id == id) {
+            return t->entries[i];
+        }
+    }
+    return NULL;
+}
 
 #endif

@@ -29,11 +29,10 @@ void test1() {
 void test2() {
     database_t* db = newDatabase( (char*) "Test Database (2)");
     table_t* t = addTableToDB(db, (char*) "Test Table");
-    entry_t* e = newEntry(newHashmap());
+    entry_t* e = newEntry(newHashmap(), 10020);
     insertEntry(t, e);
     int q = 1234;
     hashmapSet(e->map, (char*) "username", &q, HM_VALUE_INT);
-
 
     value_t* result = hashmapGet(e->map, (char*) "username"); // this returns the type of the value that the (dest*) pointer is holding
 
@@ -51,10 +50,39 @@ void test2() {
     }
 }
 
+void test3() {
+    database_t* db = newDatabase( (char*) "Test Database (3)");
+    table_t* t = addTableToDB(db, (char*) "Test Table");
+    entry_t* e = newEntry(newHashmap(), 999);
+
+    int xval = 111;
+    hashmapSet(e->map, (char*) "test1", &xval, HM_VALUE_INT);
+
+    insertEntry(t, e);
+
+    entry_t* x = getEntry(t, 999);
+
+    value_t* y = hashmapGet(x->map, (char*) "test1");
+
+    switch (y->type)
+    {
+    case HM_VALUE_INT:
+        printf("Value is %d, of type int\n", *(int*) y->value);
+        break;
+    case HM_ERROR:
+        printf("Error while getting result of the hashmap entry...\n");
+        exit(1);
+    default:
+        // there are more cases...
+        break;
+    }
+}
+
 // int argc, char const *argv[]
 int main()
 {
     // test1();
-    test2();
+    // test2();
+    test3();
     return 0;
 }
