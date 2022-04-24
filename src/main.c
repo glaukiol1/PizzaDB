@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void test1() {
-    database_t *db = newDatabase( (char*) "Test Database");
+    database_t *db = newDatabase( (char*) "Test Database (1)");
     printf("Database:\n\t Name: %s\n", db->name);
     table_t *nt = addTableToDB(db, (char*) "Test Table");
     printf("Table %d:\n\t Name: %s\n\t ID: %d\n", nt->id, nt->name, nt->id);
@@ -25,9 +25,35 @@ void test1() {
     printf("Found table? %d\n", (x3 != NULL));
 }
 
+
+void test2() {
+    database_t* db = newDatabase( (char*) "Test Database (2)");
+    table_t* t = addTableToDB(db, (char*) "Test Table");
+    entry_t* e = newEntry(newHashmap());
+    insertEntry(t, e);
+    int q = 1234;
+    hashmapSet(e->map, (char*) "username", &q, HM_VALUE_INT);
+
+
+    value_t* result = hashmapGet(e->map, (char*) "username"); // this returns the type of the value that the (dest*) pointer is holding
+
+    switch (result->type)
+    {
+    case HM_VALUE_INT:
+        printf("Value is %d, of type int", *(int*) result->value);
+        break;
+    case HM_ERROR:
+        printf("Error while getting result of the hashmap entry...");
+        exit(1);
+    default:
+        break;
+    }
+}
+
 // int argc, char const *argv[]
 int main()
 {
-    test1();
+    // test1();
+    test2();
     return 0;
 }

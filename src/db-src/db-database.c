@@ -4,6 +4,8 @@
 
 #include "db-table.c"
 #include <stddef.h>
+#include <stdio.h>
+#include <stddef.h>
 
 #define MAX_TABLES 100 // the maxiumum number of tables in a database
 
@@ -24,6 +26,10 @@ database_t* newDatabase(char *name) {
 // addTableToDB returns a pointer to the new table
 // in the DB that was added.
 table_t* addTableToDB(database_t* db, char* name) {
+    if (db->current_index + 1 > MAX_TABLES) {
+        printf("Fatal Error: Tried to insert a table more than MAX_TABLES! (max: %d)\n", MAX_TABLES);
+        exit(1);
+    }
     table_t *writeTable = newTable(name, db->current_index+1);
     db->current_index = db->current_index+1;
     writeTable->id = db->current_index;
